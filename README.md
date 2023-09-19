@@ -6,3 +6,8 @@ i work with a debian linux and kodi nexus
 
 
 this only works with network-manager installed
+
+Requirements:
+--------------------------------------------------
+    sudo apt install -y network-manager
+--------------------------------------------------
