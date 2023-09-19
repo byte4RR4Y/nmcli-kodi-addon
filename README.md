@@ -1,4 +1,4 @@
-# nmcli-kodi-addon
+# nmcli AddOn v1.0.0
 this is the preview of a kodi networkmanager addon
 
 
@@ -11,3 +11,8 @@ Requirements:
 --------------------------------------------------
     sudo apt install -y network-manager
 --------------------------------------------------
+
+Download nmcli AddOn.zip
+and install it in kodi
+
+its not finished and the work is still in progress
