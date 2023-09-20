@@ -1,4 +1,4 @@
-<addon id="plugin.program.meinwlanaddon" name="nmcli Add-On" version="1.0.0" provider-name="Daniel Wieczorek">
+<addon id="plugin.program.meinwlanaddon" name="WIFI" version="1.0.0" provider-name="Daniel Wieczorek">
   <requires>
     <import addon="xbmc.python" version="3.0.0"/>
   </requires>
