@@ -12,7 +12,7 @@ Requirements:
     sudo apt install -y network-manager
 --------------------------------------------------
 
-Download nmcli AddOn.zip
+Download plugin.program.wifi.zip
 and install it in kodi
 
 its not finished and the work is still in progress
