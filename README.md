@@ -1,5 +1,5 @@
-# nmcli AddOn v1.0.0
-this is the preview of a kodi networkmanager addon
+# nmcli AddOn v1.1.0
+this is the beta version of a kodi networkmanager addon
 
 
 i work with a debian linux and kodi nexus
