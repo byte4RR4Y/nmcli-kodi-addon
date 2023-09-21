@@ -1,0 +1,8 @@
+<addon id="plugin.program.wifi" version="1.2.0" name="WIFI" provider-name="byte4rr4y">
+    <extension point="xbmc.python.script" library="main.py">
+        <provides>executable</provides>
+    </extension>
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+    </requires>
+</addon>
