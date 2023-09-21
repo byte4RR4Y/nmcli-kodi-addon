@@ -1,4 +1,4 @@
-# nmcli AddOn v1.2.0
+# nmcli AddOn: WIFI v1.1.0
 this is the beta version of a kodi networkmanager addon
 
 
