@@ -15,7 +15,7 @@ def get_wifi_ssids():
         
         return ssids
     except subprocess.CalledProcessError as e:
-        print("Error", e)
+        print("nmcli Error", e)
         return []
     except Exception as e:
         print("Error", e)
