@@ -51,3 +51,5 @@ command = ["nmcli", "device", "wifi", "connect", selected_ssid, "password", pass
 
 # Befehl ausführen
 subprocess.run(command)
+
+list_dialog.notification('byte4RR4Y:', 'Connection established')
