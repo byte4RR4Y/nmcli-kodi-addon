@@ -2,7 +2,7 @@
 this AddOn is a network-manager frontend for kodi
 
 
-i work with a debian linux and kodi nexus
+i work with a debian based linux(MX) and kodi 19
 
 it should work with all debian based linux distributions if 'nmcli'-command is availible.
 
