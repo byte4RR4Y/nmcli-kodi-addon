@@ -6,7 +6,7 @@ i work with a debian based linux(MX) and kodi 19
 
 it should work with all debian based linux distributions if 'nmcli'-command is availible.
 
-this only works with network-manager installed
+this only works with 'network-manager' installed
 
 Requirements:
 --------------------------------------------------
