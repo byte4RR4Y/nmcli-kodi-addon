@@ -1,4 +1,4 @@
-# nmcli AddOn: WIFI v1.2.0
+# nmcli KODI-AddOn: WIFI v1.3.0
 this AddOn is a network-manager frontend for kodi
 
 
