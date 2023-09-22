@@ -15,41 +15,51 @@ def get_wifi_ssids():
         
         return ssids
     except subprocess.CalledProcessError as e:
-        print("nmcli Error", e)
+        print("Fehler beim Abrufen der SSIDs:", e)
         return []
     except Exception as e:
-        print("Error", e)
+        print("Allgemeiner Fehler:", e)
         return []
 
-# SSIDs abrufen
-ssids = get_wifi_ssids()
+def main():
+    # SSIDs abrufen
+    ssids = get_wifi_ssids()
 
-# Erstelle ein Fenster
-window = xbmcgui.Window(10000)
+    # Überprüfe, ob SSIDs gefunden wurden
+    if not ssids:
+        print("Keine WLAN-Netzwerke gefunden.")
+        return
 
-# Erstelle eine Listeansicht für die SSIDs
-list_items = [ssid for ssid in ssids]
+    # Erstelle eine Listeansicht für die SSIDs
+    list_items = ssids
 
-# Zeige Liste der SSIDs in einem eigenen Fenster an
-list_dialog = xbmcgui.Dialog()
-selected_index = list_dialog.select('Choose a network', list_items)
+    # Zeige Liste der SSIDs in einem Dialog an
+    list_dialog = xbmcgui.Dialog()
+    selected_index = list_dialog.select('Wählen Sie ein Netzwerk aus', list_items)
 
-# Überprüfe die Benutzerauswahl
-if selected_index >= 0:
-   selected_ssid = ssids[selected_index]
+    # Überprüfe die Benutzerauswahl
+    if selected_index >= 0:
+        selected_ssid = ssids[selected_index]
 
-   # Fordern Sie den Benutzer zur Eingabe des Passworts auf
-   password = list_dialog.input('Password for ' + selected_ssid, '')
+        # Fordern Sie den Benutzer zur Eingabe des Passworts auf
+        password = list_dialog.input('Passwort für ' + selected_ssid, '')
 
-# Eingabe des Passworts
-if password:
-    list_dialog.notification('Info', 'SSID: {} Passwort: {}'.format(selected_ssid, password))
-else:
-    list_dialog.notification('Info', 'Empty Password')
+        # Überprüfen Sie, ob ein Passwort eingegeben wurde
+        if not password:
+            list_dialog.notification('Info', 'Leeres Passwort')
+            command = ["nmcli", "device", "wifi", "connect", selected_ssid, "password", password]
+            subprocess.run(command)
+            return
 
-command = ["nmcli", "device", "wifi", "connect", selected_ssid, "password", password]
+        # Befehl zum Verbinden mit dem ausgewählten Netzwerk
+        command = ["nmcli", "device", "wifi", "connect", selected_ssid, "password", password]
 
-# Befehl ausführen
-subprocess.run(command)
+        try:
+            # Befehl ausführen
+            subprocess.run(command)
+            list_dialog.notification('Verbindung hergestellt', 'SSID: {}'.format(selected_ssid))
+        except subprocess.CalledProcessError as e:
+            print("Fehler bei der Verbindung:", e)
 
-list_dialog.notification('byte4RR4Y:', 'Connection established')
+if __name__ == "__main__":
+    main()
