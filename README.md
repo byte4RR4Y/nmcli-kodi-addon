@@ -4,6 +4,8 @@ this AddOn is a network-manager frontend for kodi
 
 i work with a debian based linux(MX) and kodi 19
 
+kodi 20 works too
+
 it should work with all debian based linux distributions if 'nmcli'-command is availible.
 
 this only works with 'network-manager' installed
