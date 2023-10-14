@@ -11,16 +11,15 @@ def get_wifi_ssids():
         # Teile die Ausgabe in Zeilen auf und erstelle eine Liste der SSIDs (aus Spalte 1)
         ssids = output.strip().split('\n')
         
-        # Entferne eventuelle führende oder abschließende Leerzeichen
+        # Entferne eventuell führende oder abschließende Leerzeichen
         ssids = [ssid.strip() for ssid in ssids]
         
         return ssids
     except subprocess.CalledProcessError as e:
-        print("Error", e)
         return []
     except Exception as e:
-        print("Error", e)
         return []
+        
 # Öffne ein Begrüßungsfenster
 dialog=xbmcgui.Dialog()
 dialog.ok("BYTE4RR4Y", "Choose a network and enter the password!")
@@ -45,7 +44,7 @@ if selected_index >= 0:
    # Fordere den Benutzer zur Eingabe des Passworts auf
    password = list_dialog.input('Password for ' + selected_ssid, '')
 
-# Handhabe die Eingabe des Passworts
+# Eingabe des Passworts behandeln
 if password:
     list_dialog.notification('Info', 'SSID: {} Passwort: {}'.format(selected_ssid, password))
 else:
